@@ -2,3 +2,13 @@ verbose: false
 debug: false
 loglevel: warning
 logpath: /tmp/project_template
+
+file_extractor_path: /tmp/foo.txt
+file_loader_path: /tmp/bar.txt
+
+extractor_name: file
+loader_name: file
+transformer_name: strip
+
+HOST: 0.0.0.0
+PORT: 8001

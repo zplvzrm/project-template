@@ -5,6 +5,8 @@ from click import Context
 from project_template import __version__
 from project_template.config import settings
 from project_template.log import init_log
+from project_template.manage import Manage
+from project_template.example_blog.server import Server
 
 
 @click.group(invoke_without_command=True)
@@ -35,7 +37,26 @@ def main(ctx: Context, version: str, verbose: bool, debug: bool):
 
 
 @main.command()
+@click.option('-h', '--host', show_default=True, help=f'Host IP. Default: {settings.HOST}')
+@click.option('-p', '--port', show_default=True, type=int, help=f'Port. Default: {settings.PORT}')
+@click.option('--level', help='Log level')
+def server(host, port, level):
+    """Start server."""
+    kwargs = {
+        'LOGLEVEL': level,
+        'HOST': host,
+        'PORT': port,
+    }
+    for name, value in kwargs.items():
+        if value:
+            settings.set(name, value)
+
+    Server().run()
+    
+@main.command()
 def run():
     """Run command"""
     init_log()
-    click.echo('run......')
+    manage = Manage()
+    manage.run()
+    
