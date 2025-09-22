@@ -7,7 +7,7 @@ from typing import Iterable
 
 from project_template.log import get_logger
 from project_template.constants import DEFAULT_ENCODING
-from project_template.extractor.base import BaseExtractor
+from project_template.example_etl.extractor.base import BaseExtractor
 
 logger = get_logger(__name__)
 

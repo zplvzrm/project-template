@@ -1,6 +1,6 @@
 """Transform data and remove blank of data star and end."""
 
-from project_template.transformer.base import BaseTransformer
+from project_template.example_etl.transformer.base import BaseTransformer
 
 from project_template.log import get_logger
 

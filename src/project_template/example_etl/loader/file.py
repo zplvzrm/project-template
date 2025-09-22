@@ -5,7 +5,7 @@ Write data to loader file.
 """
 
 from project_template.constants import DEFAULT_ENCODING
-from project_template.loader.base import BaseLoader
+from project_template.example_etl.loader.base import BaseLoader
 
 from project_template.log import get_logger
 
