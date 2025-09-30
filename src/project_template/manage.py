@@ -5,9 +5,9 @@ from stevedore import ExtensionManager
 
 from project_template.config import settings
 from project_template.exceptions import PluginNotFoundError
-from project_template.extractor.base import BaseExtractor
-from project_template.loader.base import BaseLoader
-from project_template.transformer.base import BaseTransformer
+from project_template.example_etl.extractor.base import BaseExtractor
+from project_template.example_etl.loader.base import BaseLoader
+from project_template.example_etl.transformer.base import BaseTransformer
 from project_template.log import get_logger
 
 logger = get_logger(__name__)

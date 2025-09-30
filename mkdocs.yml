@@ -25,33 +25,31 @@ theme:
     repo: fontawesome/brands/github
 
 markdown_extensions:
-- footnotes
-- admonition
-- pymdownx.details
-- pymdownx.superfences
-- pymdownx.tabbed
-- pymdownx.caret
-- pymdownx.mark
-- pymdownx.tilde
-- attr_list
-- md_in_html
-- pymdownx.tasklist:
-    custom_checkbox: true
-- pymdownx.tabbed:
-    alternate_style: true
-- pymdownx.highlight:
-    anchor_linenums: true
-    line_spans: __span
-    pygments_lang_class: true
-- pymdownx.inlinehilite
-- pymdownx.snippets
+    - footnotes
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
+    - pymdownx.tabbed
+    - pymdownx.caret
+    - pymdownx.mark
+    - pymdownx.tilde
+    - attr_list
+    - md_in_html
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.tabbed:
+        alternate_style: true
+    - pymdownx.highlight:
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
 
 # repo_url: https://github.com/pyloong/pythonic-project-guidelines
 # repo_name: pyloong/pythonic-project-guidelines
 # site_url: https://pyloong.github.io/pythonic-project-guidelines/
 
-plugins:
-- search
 
 nav:
 - 文档说明: index.md
@@ -62,6 +60,17 @@ nav:
 - 部署文档: deploy.md
 - 使用文档: usage.md
 
+
+plugins:
+    - search
+    - mkdocstrings:
+          handlers:
+              python:
+                  paths: [src]
+                  selection:
+                    filters: "! (^_|^__)"  # 过滤掉私有方法和属性
+                    show_source: true # 显示源代码的链接
+            # auto_docstring_format: "google"  # 设置文档字符串格式，默认或选择其他如numpy等
 
 # - 应用开发实践:
 #   - 初级教程:

@@ -31,3 +31,7 @@
 ## 如何使用
 请根据您的角色和需求，查阅相应类别的文档。
 
+::: project_template.log
+::: project_template.example_blog.dao
+::: project_template.example_blog.test.upload_specs_to_system
+::: project_template.example_blog.google

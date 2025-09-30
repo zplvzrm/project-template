@@ -13,7 +13,7 @@ _service = ArticleService()
 
 @router.get('/health')
 async def health_check():
-    return {"status": "healthy", "message": "Server is running"}
+    return {"status": "healthy", "message": "Server is running!"}
 
 
 @router.get('/articles')

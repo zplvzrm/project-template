@@ -1,4 +1,5 @@
 from fastapi import APIRouter, FastAPI
+from fastapi.responses import RedirectResponse
 
 from project_template.example_blog import views
 
@@ -19,4 +20,6 @@ def router_v1():
 
 
 def init_routers(app: FastAPI):
+    # 注册根路径，处理 "/" 重定向到 "/docs"
+    app.include_router(root_router(), tags=['root'])
     app.include_router(router_v1(), prefix='/api/v1', tags=['v1'])

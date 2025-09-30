@@ -10,5 +10,7 @@ extractor_name: file
 loader_name: file
 transformer_name: strip
 
+# ######################################################################################################
+# # faster api web 
 HOST: 0.0.0.0
-PORT: 8001
+PORT: 8002
